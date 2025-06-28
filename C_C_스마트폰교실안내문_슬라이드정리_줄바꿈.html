@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>C_스마트폰교실안내문</title>
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .slide {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide active">
+<p>스마트폰 교실은 스마트폰 사용이 익숙하지 않은 어르신들을 위해 마련된 프로그램입니다.<br/>기초적인 사용법부터 다양한 생활 활용법까지 배울 수 있습니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>수업은 주 2회, 1시간씩 운영되며 스마트폰을 직접 만져보며 실습하는 방식으로 진행됩니다.<br/>각 수업에는 담당 강사가 배치되어 개인별로 친절히 안내해 드립니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>교실에서는 사진 찍기, 문자 보내기, 간단한 앱 설치 및 사용법 등을 다루며, 수강생의 수준에 맞춘 맞춤형 교육이 이루어집니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>참여를 원하시는 분은 동 주민센터에 신청하시거나 가까운 노인복지관으로 문의해 주세요.<br/>참여는 무료이며 스마트폰을 소지하지 않으신 분께는 기기가 제공됩니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide++;
+        if (currentSlide < slides.length) {
+            slides[currentSlide].classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
