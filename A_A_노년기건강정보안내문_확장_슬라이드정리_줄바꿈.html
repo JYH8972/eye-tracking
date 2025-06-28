@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>A_노년기건강정보안내문_확장</title>
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .slide {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide active">
+<p>노년기에는 신체 기능의 자연스러운 저하가 동반됩니다.<br/>특히 심혈관계, 근골격계, 소화계의 변화는 일상생활의 질에 큰 영향을 줄 수 있습니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>건강한 노화를 위해서는 규칙적인 운동, 균형 잡힌 식사, 충분한 수면이 필수적입니다.<br/>매일 30분 이상의 걷기 운동과 같은 유산소 활동은 심장 건강을 유지하는 데 효과적입니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>또한 정기적인 건강검진을 통해 질병을 조기에 발견하고 관리하는 것이 중요합니다.<br/>고혈압, 당뇨병, 고지혈증 등 만성질환의 조기 진단과 치료는 삶의 질을 높이는 데 도움이 됩니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>정신 건강 역시 간과해서는 안 됩니다.<br/>사회적 활동에 참여하고, 친구나 가족과의 교류를 지속하는 것이 우울감과 외로움을 줄이는 데 효과적입니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide++;
+        if (currentSlide < slides.length) {
+            slides[currentSlide].classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
