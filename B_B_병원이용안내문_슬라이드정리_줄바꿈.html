@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<title>B_병원이용안내문</title>
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .slide {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide active">
+<p>가까운 병원을 이용하실 때는 진료 시간과 진료 과목을 미리 확인하시는 것이 좋습니다.<br/>일부 병원은 점심시간이나 특정 요일에 휴진할 수 있습니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>주민등록증이나 건강보험증은 항상 지참하셔야 하며, 처음 방문하는 병원일 경우 진료기록 작성을 위해 약간의 대기 시간이 발생할 수 있습니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>대부분의 동네 병원은 예약 없이 방문이 가능하나, 최근에는 전화나 모바일을 통한 사전 예약 서비스를 운영하는 곳도 늘어나고 있습니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<div class="slide">
+<p>진료를 마친 후에는 약 처방을 받아 근처 약국에서 복약 지도를 받는 것이 중요합니다.<br/>복용 시간과 주의사항을 정확히 숙지하시기 바랍니다.<br/></p>
+<button onclick="nextSlide()">다음</button>
+</div>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide++;
+        if (currentSlide < slides.length) {
+            slides[currentSlide].classList.add('active');
+        }
+    }
+</script>
+</body>
+</html>
